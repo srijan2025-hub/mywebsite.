@@ -112,6 +112,6 @@ footer {
     box-shadow: 0 -5px 15px #fff;
 }
 a {
-    color: black;       /* Makes link text black */
+    color: white;       /* Makes link text white */
     text-decoration: none; /* Optional: removes underline */
 }
