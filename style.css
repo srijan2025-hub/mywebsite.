@@ -1,85 +1,113 @@
-/* === General === */
+/* physics-index-rainbow.css */
+
+/* General page styling */
 body {
-    min-height: 100vh;      /* Ensure body fills the viewport */
-    margin: 0;              /* Remove default margin */
-    display: flex;          /* Center content vertically */
-    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Animated rainbow background covering all colors */
+@keyframes rainbowBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(
+        270deg,
+        #00008b, #1e90ff, #00ffff, #00ff00, #ffff00, #ff7f00, #ff0000, #8b0000, #4b0082, #9400d3
+    );
+    background-size: 2000% 2000%;
+    z-index: -1;
+    animation: rainbowBG 60s linear infinite;
+}
+
+/* Header with gradient and RGB glow */
+header {
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+}
+
+/* Animated RGB text glow for header */
+@keyframes rgbGlow {
+    0% { text-shadow: 0 0 5px #ff0000, 0 0 10px #00ff00, 0 0 15px #0000ff; }
+    25% { text-shadow: 0 0 10px #00ff00, 0 0 20px #0000ff, 0 0 15px #ff0000; }
+    50% { text-shadow: 0 0 15px #0000ff, 0 0 25px #ff0000, 0 0 10px #00ff00; }
+    75% { text-shadow: 0 0 20px #ff0000, 0 0 30px #00ff00, 0 0 15px #0000ff; }
+    100% { text-shadow: 0 0 5px #ff0000, 0 0 10px #00ff00, 0 0 15px #0000ff; }
+}
+
+header h1 {
+    animation: rgbGlow 4s infinite alternate;
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
     justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #00FFCC, #FF00FF, #0000FF); /* your gradient */
-    background-size: cover;
-    background-repeat: no-repeat;
+    gap: 30px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-/* === Title === */
-h1 {
-  background: #007bff;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 10px;
-  display: inline-block;
-  margin-top: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
-/* === Card container (grid) === */
-.container {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+nav a:hover {
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff);
+    box-shadow: 0 0 15px #fff, 0 0 25px #fff;
+    color: #000;
 }
 
-/* === Cards === */
+/* Section headings with rainbow text */
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowBG 10s linear infinite;
+}
+
+/* Cards for index entries */
 .card {
-  background: rgba(255, 255, 255, 0.85); /* Slightly transparent */
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
-  transition: 0.3s;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  background: rgba(230, 240, 255, 0.9);
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #fff, 0 0 40px #fff;
 }
 
-/* === Links === */
-a {
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  color: #2c3e50;
-  display: block;
-}
-
-a:hover {
-  color: #d35400;
-}
-
-/* === Back button === */
-.back-home {
-  display: inline-block;
-  margin: 20px;
-  padding: 10px 20px;
-  background: #28a745;
-  color: white;
-  border-radius: 8px;
-  font-size: 16px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.back-home:hover {
-  background: #218838;
-}
-
-/* === Footer === */
+/* Footer */
 footer {
-  margin: 20px 0;
-  font-size: 14px;
-  color: white;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    box-shadow: 0 -5px 15px #fff;
 }
