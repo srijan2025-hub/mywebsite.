@@ -6,57 +6,103 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f6f9;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
       margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #33;
-    }
-    .index {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    ul {
-      list-style-type: card;
       padding: 0;
+      text-align: center;
     }
-    li {
-      margin: 10px 0;
+
+    h1 {
+      background: #007bff;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    .card {
+      background: white;
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: left;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      background: #e6f0ff;
+    }
+
     a {
       text-decoration: none;
       font-size: 18px;
-      color: #0066cc;
-      transition: 0.2s;
+      font-weight: bold;
+      color: #2c3e50;
+      display: block;
     }
+
     a:hover {
-      color: #ff6600;
+      color: #d35400;
+    }
+
+    footer {
+      margin: 20px 0;
+      font-size: 14px;
+      color: white;
     }
   </style>
 </head>
 <body>
-
   <h1>📘 Physics Index</h1>
-  <div class="card">
-    <ul>
-      <li><a href="arihantdcpandey.html">Arihant DC Pandey</a></li>
-      <li><a href="cengagebmsharma.html">Cengage B.M.Sharma</a></li>
-      <li><a href="hcverma.html">H.C.Verma</a></li>
-      <li><a href="allenmaterialsjee.html">Allen Materials 
-      JEE</a></li>
-      <li><a href="bansalmaterials.html">Bansal Materials 
-      JEE</a></li>
-      <li><a href="handbookshortnotes.html">handbook short notes</a></li>
-      <li><a href="pyqs.html">pyqs</a></li>
-      <li><a href="othhers.html">cw</a></li>
-    </ul>
+  
+  <div class="container">
+
+    <div class="card">
+      <a href="#">📖 Arihant DC Pandey</a>
+    </div>
+
+    <div class="card">
+      <a href="#">📘 Cengage B.M. Sharma</a>
+    </div>
+
+    <div class="card">
+      <a href="#">📗 H.C. Verma</a>
+    </div>
+
+    <div class="card">
+      <a href="#">📙 Allen Materials JEE</a>
+    </div>
+
+    <div class="card">
+      <a href="#">📕 Bansal Materials JEE</a>
+    </div>
+
+    <div class="card">
+      <a href="#">📒 Handbook Short Notes</a>
+    </div>
+
+    <div class="card">
+      <a href="#">📑 PYQs</a>
+    </div>
+
+    <div class="card">
+      <a href="#">📂 Classwork</a>
+    </div>
+
   </div>
 
+  <footer>
+    ✍️ Made by Srijan | Hosted Free on GitHub Pages
+  </footer>
 </body>
 </html>
