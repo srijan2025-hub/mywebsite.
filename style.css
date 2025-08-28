@@ -31,13 +31,13 @@ body::before {
     animation: rainbowBG 60s linear infinite;
 }
 
-/* Header with gradient and RGB glow */
+/* Header with gradient */
 header {
     padding: 20px;
     text-align: center;
     font-size: 2em;
     font-weight: bold;
-    color:#ffffff;
+    color:white;
     text-shadow: 0 0 10px #fff, 0 0 20px #fff;
 }
 
@@ -84,13 +84,13 @@ section h2 {
     margin-bottom: 20px;
     background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color:white;
     animation: rainbowBG 10s linear infinite;
 }
 
 /* Cards for index entries */
 .card {
-    background:#FFFFFF(0, 0, 0, 0.5);
+    background: white (0, 0, 0, 0.5);
     margin: 20px 0;
     padding: 20px;
     border-radius: 15px;
