@@ -1,0 +1,91 @@
+/* === General === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  /* Animated RGB gradient background */
+  background: linear-gradient(-45deg, #ff0000, #00ff00, #0000ff, #ff00ff, #00ffff, #ffff00);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Title === */
+h1 {
+  background: #007bff;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* === Card container (grid) === */
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* === Cards === */
+.card {
+  background: rgba(255, 255, 255, 0.85); /* Slightly transparent */
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: rgba(230, 240, 255, 0.9);
+}
+
+/* === Links === */
+a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  display: block;
+}
+
+a:hover {
+  color: #d35400;
+}
+
+/* === Back button === */
+.back-home {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-home:hover {
+  background: #218838;
+}
+
+/* === Footer === */
+footer {
+  margin: 20px 0;
+  font-size: 14px;
+  color: white;
+}
