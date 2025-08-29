@@ -1,21 +1,4 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Srijan's Website</title>
-  <style>
-    body { background: lightyellow; font-family: Arial; text-align: center; }
-    h1 { color: darkred; }
-    p { font-size: 18px; }
-  </style>
-</head>
-
-  </div>
-<body>
-  <h1>Hello, I am Srijan 👋</h1>
-  <p>This is my first website made on mobile📱 (for free!)</p>
-</body>
-</html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -24,14 +7,15 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 1;
+      margin: 0;
       padding: 0;
-      background: #f5f5f52;
+      background: #f5f5f5;
       color: #333;
       text-align: center;
+      transition: background 0.3s, color 0.3s;
     }
     header {
-      background: #4CAF51;
+      background: #4CAF50;
       color: white;
       padding: 20px;
       font-size: 1.5em;
@@ -63,35 +47,74 @@
       font-size: 0.9em;
       color: #777;
     }
+    /* Dark mode styles */
+    body.dark {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    body.dark .pdf-list li {
+      background: #1e1e1e;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+    }
+    body.dark a {
+      color: #90caf9;
+    }
+    .dark-toggle {
+      margin-top: 10px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #333;
+      color: white;
+    }
   </style>
 </head>
 <body>
 
   <header>
     📚 Srijan's Study Library
+    <button class="dark-toggle" onclick="toggleDark()">🌙 Toggle Dark Mode</button>
   </header>
 
-  <div class="container">
-    <h2>PDF Google drive folder s</h2>
-    <ul class="pdf-list">
-      <li><a href="https://drive.google.com/file/d/XXXXX/view?usp=sharing" target="chapter 1">📄 Physics🧲- Notes</a></li>
-      <mi><a href="https://drive.google.com/file/d/XXXXX/view?usp=sharing" target="chapter 1">📄 Physics🧲- Notes</a></li>
-      <li><a href="https://drive.google.com/file/d/XXXXX/view?usp=sharing" target="chapter 1">📄 Physics🧲- Notes</a></li>
+  <div class="container" id="welcome">
+    <h2>Enter your name to continue:</h2>
+    <input type="text" id="nameInput" placeholder="Your Name">
+    <button onclick="showGreeting()">Submit</button>
+  </div>
+
+  <div class="container" id="content" style="display:none;">
+    <h2 id="greeting"></h2>
     <h2>Available PDFs</h2>
-<ul>
-  <li><a href="physics.html">📘 Physics Notes</a></li>
-  <li><a href="chemistry.html">🧪 Chemistry Notes</a></li>
-  <li><a href="maths.html">📗 Mathematics Notes</a></li>
-  <li><a href="biology.html">🧬 Biology Notes</a></li>
-  
-</ul>
-<a href="index.html">⬅ Back to Home</a>
-        
+    <ul>
+      <li><a href="physics.html">📘 Physics Notes</a></li>
+      <li><a href="chemistry.html">🧪 Chemistry Notes</a></li>
+      <li><a href="maths.html">📗 Mathematics Notes</a></li>
+      <li><a href="biology.html">🧬 Biology Notes</a></li>
+    </ul>
+    <a href="index.html">⬅ Back to Home</a>
   </div>
 
   <footer>
     ✍️ Made by Srijan | Hosted Free on GitHub Pages
   </footer>
 
+  <script>
+    function showGreeting() {
+      const name = document.getElementById('nameInput').value.trim();
+      if (name) {
+        document.getElementById('welcome').style.display = "none";
+        document.getElementById('content').style.display = "block";
+        document.getElementById('greeting').innerText = "Hello, " + name + "! 👋 Welcome to Srijan's Study Library.";
+      } else {
+        alert("Please enter your name!");
+      }
+    }
+
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
+
