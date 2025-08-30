@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Srijan's Index</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+      background-size: 300% 300%;
+      animation: gradientMove 8s infinite alternate;
+      color: #333;
+      text-align: center;
+    }
+    @keyframes gradientMove {
+      0% { background-position: left; }
+      100% { background-position: right; }
+    }
+    header {
+      padding: 20px;
+      font-size: 1.8em;
+      font-weight: bold;
+      background: rgba(0,0,0,0.3);
+      color: white;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    .option {
+      background: white;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: 0.3s;
+    }
+    .option:hover {
+      background: #f1f1f1;
+    }
+    .sub-options {
+      display: none;
+      margin-top: 10px;
+      padding-left: 20px;
+      text-align: left;
+    }
+    .sub-options a {
+      display: block;
+      padding: 8px;
+      text-decoration: none;
+      color: #007bff;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .sub-options a:hover {
+      background: rgba(0,123,255,0.1);
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>🌈 Srijan's Index</header>
+
+  <div class="container">
+
+    <div class="option" onclick="toggleMenu('links')">🔗 Useful Links</div>
+    <div id="links" class="sub-options">
+      <a href="https://youtube.com" target="_blank">▶ YouTube</a>
+      <a href="https://t.me" target="_blank">📢 Telegram</a>
+      <a href="https://drive.google.com" target="_blank">📂 Google Drive</a>
+    </div>
+
+    <div class="option" onclick="toggleMenu('notes')">📚 Notes</div>
+    <div id="notes" class="sub-options">
+      <a href="physics.html">📘 Physics</a>
+      <a href="chemistry.html">🧪 Chemistry</a>
+      <a href="maths.html">📗 Maths</a>
+      <a href="biology.html">🧬 Biology</a>
+    </div>
+
+    <div class="option" onclick="toggleMenu('extras')">⭐ Extras</div>
+    <div id="extras" class="sub-options">
+      <a href="#">💡 Motivation</a>
+      <a href="#">🎵 Music</a>
+      <a href="#">📰 News</a>
+    </div>
+
+  </div>
+
+  <footer>✍️ Made by Srijan</footer>
+
+  <script>
+    function toggleMenu(id) {
+      const menu = document.getElementById(id);
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
