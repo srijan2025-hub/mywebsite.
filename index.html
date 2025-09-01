@@ -152,3 +152,171 @@
 
 </body>
 </html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Srijan's Web</title>
+  <style>
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(278deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 1400% 1400%;
+      animation: rainbow 30s ease infinite;
+      color: #222;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    #form-container, #content-container {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+    input[type="text"], input[type="email"] {
+      width: 90%;
+      padding: 10px;
+      margin: 12px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 95%;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #greeting {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .subject-button {
+      display: block;
+      background: #ffffff;
+      color: #4CAF50;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      text-decoration: none;
+      padding: 12px 18px;
+      margin: 10px 0;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .subject-button:hover {
+      background: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Form shown first -->
+  <div id="form-container">
+    <h2>Welcome! Please enter your details</h2>
+    <form id="visitorForm" target="hidden_iframe" onsubmit="return submitForm()" method="POST"
+      action="https://docs.google.com/forms/d/e/1FAIpQLScm1rsCIWKFT5-UkF9h9dmgPn2pOKyYX73w-gjAwPHOmsjxeg/formResponse">
+      
+      <input type="text" id="name" name="entry.853938682" placeholder="Name (required)" required />
+
+      <!-- Mobile number field with +91 validation -->
+      <input type="text" id="mobno" name="entry.1821961431" 
+             placeholder="Mobile No. (required)" 
+             required 
+             pattern="^(\+91[\-\s]?)?[0]?[6-9]\d{9}$"
+             title="Enter a valid 10-digit mobile number. +91 format also allowed." />
+
+      <input type="email" id="email" name="entry.360697548" placeholder="Email (optional)" />
+
+      <button type="submit">Submit & Enter Site</button>
+    </form>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  </div>
+
+  <!-- Content hidden initially -->
+  <div id="content-container" style="display:none;">
+    <div id="greeting"></div>
+    <h1>📚 Srijan's Study Library</h1>
+
+    <a class="subject-button" href="physics.html" target="_blank">📘 Physics Notes</a>
+    <a class="subject-button" href="chemistry.html" target="_blank">🧪 Chemistry Notes</a>
+    <a class="subject-button" href="math.html" target="_blank">📗 Mathematics Notes</a>
+    <a class="subject-button" href="biology.html" target="_blank">🧬 Biology Notes</a>
+
+    <h1>📄 Direct PDF Links (GDrive)</h1>
+    <a class="subject-button" href="https://drive.google.com/file/d/AAAAA/view?usp=sharing" target="_blank">GDrive PDF 1</a>
+    <a class="subject-button" href="https://drive.google.com/file/d/AAAAA/view?usp=sharing" target="_blank">GDrive PDF 2</a>
+    <a class="subject-button" href="https://drive.google.com/file/d/AAAAA/view?usp=sharing" target="_blank">GDrive PDF 3</a>
+
+    <h1>🔗 Useful Links</h1>
+    <a class="subject-button" href="link.html" target="_blank">Useful Links Page</a>
+  </div>
+
+  <script>
+    function submitForm() {
+      const name = document.getElementById('name').value.trim();
+      const mobno = document.getElementById('mobno').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      const mobnoPattern = /^(\+91[\-\s]?)?[0]?[6-9]\d{9}$/;
+
+      if (!name) {
+        alert('Please enter your name.');
+        return false;
+      }
+
+      if (!mobno || !mobnoPattern.test(mobno)) {
+        alert('Please enter a valid 10-digit mobile number. +91 format also allowed.');
+        return false;
+      }
+
+      // Show content after form submission
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('content-container').style.display = 'block';
+
+      // Custom greeting depending on email
+      const greeting = document.getElementById('greeting');
+      if (email) {
+        greeting.textContent = `Hello, ${name}! Welcome to Srijan's Study Library 👋`;
+      } else {
+        greeting.textContent = `Hello, ${name}! Welcome — you skipped email, that's totally fine 👋`;
+      }
+
+      return true; // Submit form to Google Forms
+    }
+  </script>
+
+  <footer style="margin-top: 40px; color: #333; font-size: 0.9em;">
+    ✍️ Made by Srijan | Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+  </footer>
+
+</body>
+</html>
