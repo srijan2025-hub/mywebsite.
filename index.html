@@ -83,19 +83,20 @@
   <!-- Form shown first -->
   <div id="form-container">
     <h2>Welcome! Please enter your details</h2>
-    <form id="visitorForm" target="hidden_iframe" onsubmit="return submitForm()" method="POST"
-      action="https://docs.google.com/forms/d/e/1FAIpQLScm1rsCIWKFT5-UkF9h9dmgPn2pOKyYX73w-gjAwPHOmsjxeg/formResponse">
+    <form id="visitorForm" target="hidden_iframe" method="POST"
+      action="https://docs.google.com/forms/d/e/1FAIpQLScm1rsCIWKFT5-UkF9h9dmgPn2pOKyYX73w-gjAwPHOmsjxeg/formResponse"
+      onsubmit="return submitForm(event)">
       
-      <input type="text" id="name" name="entry.853938682" placeholder="Name (required)" required />
+      <input type="text" id="name" name="entry.853938682" placeholder="Name (required)" required autocomplete="name" />
 
-      <!-- Mobile number field with +91 validation -->
       <input type="text" id="mobno" name="entry.1821961431" 
              placeholder="Mobile No. (required)" 
              required 
              pattern="^(\+91[\-\s]?)?[0]?[6-9]\d{9}$"
-             title="Enter a valid 10-digit mobile number. +91 format also allowed." />
+             title="Enter a valid 10-digit mobile number. +91 format also allowed."
+             autocomplete="tel" />
 
-      <input type="email" id="email" name="entry.360697548" placeholder="Email (optional)" />
+      <input type="email" id="email" name="entry.360697548" placeholder="Email (optional)" autocomplete="email" />
 
       <button type="submit">Submit & Enter Site</button>
     </form>
@@ -122,7 +123,9 @@
   </div>
 
   <script>
-    function submitForm() {
+    function submitForm(event) {
+      event.preventDefault(); // prevent page reload
+
       const name = document.getElementById('name').value.trim();
       const mobno = document.getElementById('mobno').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -139,11 +142,14 @@
         return false;
       }
 
-      // Show content after form submission
+      // Submit the form via hidden iframe
+      document.getElementById('visitorForm').submit();
+
+      // Show content after submission
       document.getElementById('form-container').style.display = 'none';
       document.getElementById('content-container').style.display = 'block';
 
-      // Custom greeting depending on email
+      // Show greeting
       const greeting = document.getElementById('greeting');
       if (email) {
         greeting.textContent = `Hello, ${name}! Welcome to Srijan's Study Library 👋`;
@@ -151,7 +157,7 @@
         greeting.textContent = `Hello, ${name}! Welcome — you skipped email, that's totally fine 👋`;
       }
 
-      return true; // Submit form to Google Forms
+      return false; // prevent default form submission reload
     }
   </script>
 
