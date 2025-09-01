@@ -61,8 +61,8 @@
   <div id="entryForm">
     <h2>Enter Your Name to View Links</h2>
     <form id="userForm" onsubmit="return submitAndShowContent()">
-      <input type="text" id="nameInput" name="entry.2138318786" placeholder="Your Name *" required><br>
-      <input type="email" id="emailInput" name="entry.1476231229" placeholder="Your Email (optional)"><br>
+      <input type="text" id="nameInput" name="entry.853938682" placeholder="Your Name *" required><br>
+      <input type="email" id="emailInput" name="entry.1821961431" placeholder="Your Email (optional)"><br>
       <button type="submit">Submit</button>
     </form>
   </div>
@@ -89,8 +89,8 @@
       // Send data to Google Form
       const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScYrkd58slSSfUnREn1JLE0qRcv8S2eNdl3y0j1rb5yOd_NIg/formResponse";
       const formData = new FormData();
-      formData.append("entry.2138318786", name);  // Name field
-      formData.append("entry.1476231229", email); // Email field
+      formData.append("entry.853938682", name);  // Name field
+      formData.append("entry.1821961431", email); // Email field
 
       fetch(formURL, {
         method: "POST",
