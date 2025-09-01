@@ -86,7 +86,8 @@
     <h2>Welcome! Please enter your details</h2>
     <form id="visitorForm" target="hidden_iframe" onsubmit="return submitForm()" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLScm1rsCIWKFT5-UkF9h9dmgPn2pOKyYX73w-gjAwPHOmsjxeg/formResponse">
       <input type="text" id="name" name="entry.853938682" placeholder="Name (required)" required />
-<input type="email" id="email" name="entry.1821961431" placeholder="Email (optional)" />
+      <input type="text" id="mobno." name="entry.1821961431" placeholder="mobno. (required)" required />
+<input type="email" id="email" name="entry.360697548" placeholder="Email (optional)" />
 
       <button type="submit">Submit & Enter Site</button>
     </form>
@@ -116,10 +117,16 @@
   <script>
   function submitForm() {
     const name = document.getElementById('name').value.trim();
+    const name = document.getElementById('mobno.').value.trim();
     const email = document.getElementById('email').value.trim();
 
     if (!name) {
       alert('Please enter your name.');
+      return false;
+    }
+    
+    if (!mobno.) {
+      alert('Please enter your mobno.');
       return false;
     }
 
