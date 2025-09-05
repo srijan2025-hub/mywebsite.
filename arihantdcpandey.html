@@ -3,86 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arihant Physics - PDF Viewer</title>
+  <title>Arihant Physics</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      background: #f4f6f9;
-    }
-    h1 {
-      margin-bottom: 20px;
-      text-align: center;
+      background: #f9f9f9;
     }
     .book {
       margin-bottom: 50px;
+      padding: 20px;
       background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    h2 {
-      margin-bottom: 10px;
+    .book h2 {
+      margin-top: 0;
+      color: #333;
     }
     .btn {
       display: inline-block;
-      margin: 5px 10px 15px 0;
-      padding: 8px 12px;
-      background: #0077cc;
+      margin: 6px 6px 15px 0;
+      padding: 10px 15px;
+      background: #007BFF;
       color: #fff;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
     }
     .btn:hover {
-      background: #005fa3;
+      background: #0056b3;
+    }
+    .preview {
+      display: none;
+      margin-top: 15px;
     }
     iframe {
       width: 100%;
       height: 600px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>📚 Arihant Physics Books</h1>
 
-  <!-- Mechanics Volume 1 -->
+  <!-- Mechanics 1 -->
   <div class="book">
     <h2>📘 DC Pandey Mechanics 1</h2>
-    <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf" target="_blank">
-      📂 View in Adobe
-    </a>
-    <a class="btn" href="https://drive.google.com/file/d/YOUR_MECH1_ID/view?usp=sharing" target="_blank">
-      ☁️ View in Google Drive
-    </a>
-    <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf" target="_blank">
-      🌐 View in Web
-    </a>
-    <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf" download>
-      ⬇️ Download
-    </a>
-    <iframe src="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf" allowfullscreen></iframe>
+    <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf" target="_blank">📂 View in Adobe</a>
+    <a class="btn" href="https://drive.google.com/file/d/1Ft7LyjA3FLoRYhTCDHWPEu_aYbhWaeau/preview" target="_blank">🔗 View in Google Drive</a>
+    <a class="btn" onclick="togglePreview('preview1')">🌐 Show/Hide Web Preview</a>
+    <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf" download>⬇️ Download</a>
+
+    <div class="preview" id="preview1">
+      <iframe src="https://docs.google.com/viewer?url=https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf&embedded=true" allowfullscreen></iframe>
+    </div>
   </div>
 
-  <!-- Mechanics Volume 2 -->
+  <!-- Mechanics 2 -->
   <div class="book">
     <h2>📘 DC Pandey Mechanics 2</h2>
-    <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf" target="_blank">
-      📂 View in Adobe
-    </a>
-    <a class="btn" href="https://drive.google.com/file/d/YOUR_MECH2_ID/view?usp=sharing" target="_blank">
-      ☁️ View in Google Drive
-    </a>
-    <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf" target="_blank">
-      🌐 View in Web
-    </a>
-    <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf" download>
-      ⬇️ Download
-    </a>
-    <iframe src="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf" allowfullscreen></iframe>
+    <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf" target="_blank">📂 View in Adobe</a>
+    <a class="btn" href="https://drive.google.com/file/d/YOUR_MECH2_ID/preview" target="_blank">🔗 View in Google Drive</a>
+    <a class="btn" onclick="togglePreview('preview2')">🌐 Show/Hide Web Preview</a>
+    <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf" download>⬇️ Download</a>
+
+    <div class="preview" id="preview2">
+      <iframe src="https://docs.google.com/viewer?url=https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf&embedded=true" allowfullscreen></iframe>
+    </div>
   </div>
 
+  <script>
+    function togglePreview(id) {
+      const preview = document.getElementById(id);
+      preview.style.display = (preview.style.display === "block") ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
