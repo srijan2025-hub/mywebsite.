@@ -3,136 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arihant Physics Books</title>
-  <style>
-    /* 🎨 Light Mode Variables (Default) */
-    :root {
-      --bg: #fff;
-      --text: #000;
-      --card: #f9f9f9;
-      --btn-bg: #4CAF50;
-      --btn-text: #fff;
-      --btn-hover: #45a049;
-      --toggle-bg: #eee;
-      --iframe-border: #ccc;
-    }
-
-    /* 🌙 Dark Mode Overrides */
-    body.dark {
-      --bg: #000;
-      --text: #fff;
-      --card: #111;
-      --btn-bg: #00c896;
-      --btn-text: #000;
-      --btn-hover: #00a87a;
-      --toggle-bg: #444;
-      --iframe-border: #222;
-    }
-
-    /* 🌐 Global Styles */
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 20px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    h2 {
-      margin-bottom: 10px;
-    }
-
-    .book {
-      background: var(--card);
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: background 0.3s;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 5px 8px 5px 0;
-      padding: 8px 12px;
-      background: var(--btn-bg);
-      color: var(--btn-text);
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: var(--btn-hover);
-    }
-
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: 1px solid var(--iframe-border);
-      margin-top: 10px;
-      border-radius: 4px;
-    }
-
-    .toggle-btn {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background: var(--toggle-bg);
-      color: var(--text);
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: background 0.3s, color 0.3s;
-    }
-  </style>
-</head>
-<body>
-  <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-
-  <h2>Arihant Physics Books</h2>
-
-  <!-- 📘 Mechanics 1 -->
-  <div class="book">
-    <h3>Mechanics 1</h3>
-    <a href="https://drive.google.com/file/d/1Ft7LyjA3FLoRYhTCDHWPEu_aYbhWaeau/view" target="_blank" class="btn">View in Adobe</a>
-    <a href="https://drive.google.com/file/d/1Ft7LyjA3FLoRYhTCDHWPEu_aYbhWaeau/view" target="_blank" class="btn">View in Drive</a>
-    <a href="https://docs.google.com/viewer?url=https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf&embedded=true" target="_blank" class="btn">View in Web</a>
-    <a href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf" download class="btn">Download</a>
-    <iframe src="https://docs.google.com/viewer?url=https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf&embedded=true"></iframe>
-  </div>
-
-  <!-- 📘 Mechanics 2 (sample placeholder) -->
-  <div class="book">
-    <h3>Mechanics 2</h3>
-    <a href="#" target="_blank" class="btn">View in Adobe</a>
-    <a href="#" target="_blank" class="btn">View in Drive</a>
-    <a href="#" target="_blank" class="btn">View in Web</a>
-    <a href="#" download class="btn">Download</a>
-    <iframe src="#"></iframe>
-  </div>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark");
-    }
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arihant Physics</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
       background: #f9f9f9;
-      color: #333;
-      transition: background 0.3s, color 0.3s;
     }
     .book {
       margin-bottom: 50px;
@@ -140,10 +16,10 @@
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: background 0.3s, color 0.3s;
     }
     .book h2 {
       margin-top: 0;
+      color: #333;
     }
     .btn {
       display: inline-block;
@@ -155,7 +31,6 @@
       border-radius: 6px;
       font-size: 14px;
       cursor: pointer;
-      transition: background 0.3s;
     }
     .btn:hover {
       background: #0056b3;
@@ -170,52 +45,9 @@
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-
-    /* 🌙 Dark Mode Styles (AMOLED) */
-    body.dark {
-      background: #000;
-      color: #fff;
-    }
-    body.dark .book {
-      background: #111;
-      box-shadow: 0 4px 10px rgba(255,255,255,0.05);
-    }
-    body.dark .btn {
-      background: #00c896;
-      color: #000;
-    }
-    body.dark .btn:hover {
-      background: #00a87a;
-    }
-    body.dark iframe {
-      border: 1px solid #222;
-    }
-    .toggle-btn {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      padding: 10px 15px;
-      background: #333;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 1000;
-      transition: background 0.3s;
-    }
-    .toggle-btn:hover {
-      background: #555;
-    }
-    body.dark .toggle-btn {
-      background: #444;
-      color: #fff;
-    }
   </style>
 </head>
 <body>
-
-  <!-- Dark Mode Toggle Button -->
-  <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
 
   <!-- Mechanics 1 -->
   <div class="book">
@@ -247,16 +79,6 @@
     function togglePreview(id) {
       const preview = document.getElementById(id);
       preview.style.display = (preview.style.display === "block") ? "none" : "block";
-    }
-
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark");
-      const btn = document.querySelector(".toggle-btn");
-      if (document.body.classList.contains("dark")) {
-        btn.textContent = "☀️ Light Mode";
-      } else {
-        btn.textContent = "🌙 Dark Mode";
-      }
     }
   </script>
 </body>
