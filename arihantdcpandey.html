@@ -48,25 +48,26 @@
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-    /* 🌙 Dark Mode Styles */
+
+    /* 🌙 Dark Mode Styles (AMOLED) */
     body.dark {
-      background: #121212;
-      color: #f0f0f0;
+      background: #000;
+      color: #fff;
     }
     body.dark .book {
-      background: #1e1e1e;
-      box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+      background: #111;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.05);
     }
     body.dark .btn {
-      background: #bb86fc;
+      background: #00c896;
+      color: #000;
     }
     body.dark .btn:hover {
-      background: #9c63d6;
+      background: #00a87a;
     }
     body.dark iframe {
-      border: 1px solid #444;
+      border: 1px solid #222;
     }
-    /* Toggle Button */
     .toggle-btn {
       position: fixed;
       top: 15px;
@@ -82,6 +83,10 @@
     }
     .toggle-btn:hover {
       background: #555;
+    }
+    body.dark .toggle-btn {
+      background: #444;
+      color: #fff;
     }
   </style>
 </head>
