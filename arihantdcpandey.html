@@ -59,6 +59,7 @@
     <a class="btn" href="https://drive.google.com/file/d/1Ft7LyjA3FLoRYhTCDHWPEu_aYbhWaeau/preview" target="_blank">🔗 View in Google Drive</a>
     <a class="btn" onclick="togglePreview('preview1')">🌐 Show/Hide Web Preview</a>
     <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf" download>⬇️ Download</a>
+<button class="btn" onclick="openFullscreenPDF('https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf')">🖥️ Fullscreen View</button>
 
     <div class="preview" id="preview1">
       <iframe src="https://docs.google.com/viewer?url=https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf&embedded=true" allowfullscreen></iframe>
@@ -84,6 +85,13 @@
        preview.style.display = (preview.style.display==="block") ? "none" : "block";
         
     }
+    function openFullscreenPDF(pdfUrl) {
+  // Construct PDF.js viewer URL
+  const viewerUrl = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+  // Open in new tab (takes full browser window)
+  window.open(viewerUrl, '_blank');
+}
+
   </script>
 </body>
 </html>
