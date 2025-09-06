@@ -79,15 +79,10 @@
   </div>
 
   <script>
-    function togglePreview(id, url) {
+    function togglePreview(id) {
       const preview = document.getElementById(id);
-      if (preview.style.display === "block") {
-        preview.style.display = "none";
-        preview.innerHTML = "";
-      } else {
-        preview.style.display = "block";
-        preview.innerHTML = `<iframe src="${url}" allowfullscreen></iframe>`;
-      }
+       preview.style.display = (preview.style.display==="block") ? "none" : "block";
+        
     }
   </script>
 </body>
