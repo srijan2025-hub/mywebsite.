@@ -87,3 +87,129 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arihant Physics – Fullscreen PDF.js</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #000; color: #fff; padding: 20px; }
+  h1 { text-align: center; color: #00c896; margin-bottom: 30px; }
+  .book { margin-bottom: 40px; padding: 20px; background: #111; border-radius: 12px; box-shadow: 0 4px 12px rgba(255,255,255,0.05); }
+  .btn { display: inline-block; margin: 6px 6px 15px 0; padding: 10px 15px; background: #00c896; color: #000; text-decoration: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+  .btn:hover { background: #00a87a; }
+</style>
+</head>
+<body>
+
+<h1>📚 Arihant Physics – Fullscreen PDF.js</h1>
+
+<div class="book">
+  <h2>📘 DC Pandey Mechanics 1</h2>
+  <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf" download>⬇️ Download</a>
+  <button class="btn" onclick="openFullscreenPDF('https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf')">🖥️ Fullscreen View</button>
+</div>
+
+<div class="book">
+  <h2>📘 DC Pandey Mechanics 2</h2>
+  <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf" download>⬇️ Download</a>
+  <button class="btn" onclick="openFullscreenPDF('https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf')">🖥️ Fullscreen View</button>
+</div>
+
+<script>
+function openFullscreenPDF(pdfUrl) {
+  // Construct PDF.js viewer URL
+  const viewerUrl = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+  // Open in new tab (takes full browser window)
+  window.open(viewerUrl, '_blank');
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+Put your HTML text here<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arihant Physics – Preview & Telegram</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #000; color: #fff; padding: 20px; }
+  h1 { text-align: center; color: #00c896; margin-bottom: 30px; }
+  .book { margin-bottom: 40px; padding: 20px; background: #111; border-radius: 12px; box-shadow: 0 4px 12px rgba(255,255,255,0.05); }
+  .book h2 { margin-top:0; color: #fff; }
+  .btn { display: inline-block; margin: 6px 6px 15px 0; padding: 10px 15px; background: #00c896; color: #000; text-decoration: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+  .btn:hover { background: #00a87a; }
+  .preview { display: none; margin-top: 15px; }
+  iframe { width: 100%; height: 80vh; border: none; border-radius: 8px; background: #000; }
+</style>
+</head>
+<body>
+
+<h1>📚 Arihant Physics – Preview & Telegram</h1>
+
+<!-- Mechanics 1 -->
+<div class="book">
+  <h2>📘 DC Pandey Mechanics 1</h2>
+  <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf" download>⬇️ Download</a>
+  <button class="btn" onclick="togglePreview('preview1')">🌐 Toggle Preview</button>
+  <button class="btn" onclick="openFullscreenPDF('https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf')">🖥️ Fullscreen</button>
+  <a class="btn" href="https://t.me/YOUR_TELEGRAM_LINK" target="_blank">📲 Telegram</a>
+  <div class="preview" id="preview1"></div>
+</div>
+
+<!-- Mechanics 2 -->
+<div class="book">
+  <h2>📘 DC Pandey Mechanics 2</h2>
+  <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf" download>⬇️ Download</a>
+  <button class="btn" onclick="togglePreview('preview2')">🌐 Toggle Preview</button>
+  <button class="btn" onclick="openFullscreenPDF('https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf')">🖥️ Fullscreen</button>
+  <a class="btn" href="https://t.me/YOUR_TELEGRAM_LINK" target="_blank">📲 Telegram</a>
+  <div class="preview" id="preview2"></div>
+</div>
+
+<script>
+function togglePreview(id){
+  const container = document.getElementById(id);
+  if(container.style.display === "block"){
+    container.style.display = "none";
+    container.innerHTML = ""; // unload iframe to save memory
+  } else {
+    container.style.display = "block";
+    // Load PDF.js iframe
+    const pdfUrl = id === 'preview1' 
+      ? 'https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf'
+      : 'https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf';
+    container.innerHTML = `<iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(pdfUrl)}" allowfullscreen></iframe>`;
+  }
+}
+
+function openFullscreenPDF(pdfUrl){
+  const viewerUrl = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+  window.open(viewerUrl, '_blank');
+}
+</script>
+
+</body>
+</html>
