@@ -94,3 +94,126 @@
   </script>
 </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arihant Physics</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #000;  /* dark background */
+  color: #fff;       /* white text */
+}
+.book {
+  margin-bottom: 50px;
+  padding: 20px;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+.book h2 {
+  margin-top: 0;
+  color: #fff;
+}
+.btn {
+  display: inline-block;
+  margin: 6px 6px 15px 0;
+  padding: 10px 15px;
+  background: #00c896;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+.btn:hover {
+  background: #00a87a;
+}
+.preview {
+  display: none;
+  margin-top: 15px;
+}
+iframe {
+  width: 100%;
+  height: 600px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #000;
+}
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+
+<div id="books-container"></div>
+
+<script>
+// --- Book Data --- //
+const books = [
+  {
+    title: "DC Pandey Mechanics 1",
+    pdf: "https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%201%20.pdf",
+    gdrive: "https://drive.google.com/file/d/1Ft7LyjA3FLoRYhTCDHWPEu_aYbhWaeau/preview",
+    id: "preview1"
+  },
+  {
+    title: "DC Pandey Mechanics 2",
+    pdf: "https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf",
+    gdrive: "https://drive.google.com/file/d/1Fv-w6t8fdsWGFcBcWjEK_bYjsm7fVMbm/preview",
+    id: "preview2"
+  }
+  // Add more books here by copying the object above and changing details
+];
+
+// --- Functions --- //
+function togglePreview(id, pdfUrl) {
+  const preview = document.getElementById(id);
+  if(preview.style.display !== "block") {
+    // Lazy load iframe only when preview is shown
+    preview.innerHTML = `<iframe src="https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true" allowfullscreen></iframe>`;
+    preview.style.display = "block";
+  } else {
+    preview.style.display = "none";
+    preview.innerHTML = ""; // remove iframe to free memory
+  }
+}
+
+function openFullscreenPDF(pdfUrl) {
+  const viewerUrl = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+  window.open(viewerUrl, '_blank');
+}
+
+// --- Generate Book Cards --- //
+const container = document.getElementById("books-container");
+books.forEach(book => {
+  container.innerHTML += `
+    <div class="book">
+      <h2>📘 ${book.title}</h2>
+      <div class="btn-group">
+        <a class="btn" href="${book.pdf}" target="_blank">📂 View in Adobe</a>
+        <a class="btn" href="${book.gdrive}" target="_blank">🔗 View in Google Drive</a>
+        <button class="btn" onclick="togglePreview('${book.id}','${book.pdf}')">🌐 Show/Hide Preview</button>
+        <a class="btn" href="${book.pdf}" download>⬇️ Download</a>
+        <button class="btn" onclick="openFullscreenPDF('${book.pdf}')">🖥️ Fullscreen</button>
+      </div>
+      <div class="preview" id="${book.id}"></div>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>
