@@ -8,7 +8,7 @@
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      background: #000;  /* 🔥 black background */
+      background: #000;  /* dark background */
       color: #fff;       /* white text */
     }
     .book {
@@ -33,6 +33,7 @@
       font-size: 14px;
       cursor: pointer;
       font-weight: bold;
+      border: none;
     }
     .btn:hover {
       background: #00a87a; /* darker teal */
@@ -70,13 +71,13 @@
   <div class="book">
     <h2>📘 DC Pandey Mechanics 2</h2>
     <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf" target="_blank">📂 View in Adobe</a>
-    <a class="btn" href="YOUR_GDRIVE_LINK_HERE" target="_blank">🔗 View in Google Drive</a>
+    <a class="btn" href="https://drive.google.com/file/d/1Fv-w6t8fdsWGFcBcWjEK_bYjsm7fVMbm/preview" target="_blank">🔗 View in Google Drive</a>
     <a class="btn" onclick="togglePreview('preview2')">🌐 Show/Hide Web Preview</a>
     <a class="btn" href="https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf" download>⬇️ Download</a>
     <button class="btn" onclick="openFullscreenPDF('https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf')">🖥️ Fullscreen View</button>
     
     <div class="preview" id="preview2">
-      <iframe src="https://docs.google.com/viewer?url=https://srijan2025-hub.github.io/physicsstorage1/DC%20Pandey%20Mechanics%202%20.pdf&embedded=true" allowfullscreen></iframe>
+      <iframe src="https://drive.google.com/file/d/1Fv-w6t8fdsWGFcBcWjEK_bYjsm7fVMbm/preview" allowfullscreen></iframe>
     </div>
   </div>
   
@@ -85,6 +86,7 @@
       const preview = document.getElementById(id);
       preview.style.display = (preview.style.display==="block") ? "none" : "block";
     }
+
     function openFullscreenPDF(pdfUrl) {
       const viewerUrl = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
       window.open(viewerUrl, '_blank');
