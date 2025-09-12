@@ -5,7 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arihant Physics</title>
   <style>
+
+    <script>
+const darkModeToggle = document.getElementById('darkModeToggle');
+
+darkModeToggle.addEventListener('click', () => {
+  let link = document.getElementById('darkModeStylesheet');
+
+  if (!link) {
+    // Add darkmode.css dynamically
+    link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.id = 'darkModeStylesheet';
+    link.href = 'darkmode.css';
+    document.head.appendChild(link);
+  } else {
+    // Remove darkmode.css
+    link.remove();
+  }
+});
+</script>
+
+    
     body {
+      
+      <button class="btn" id="darkModeToggle">🌓 Toggle AMOLED Neon Dark Mode</button>
+      
       font-family: Arial, sans-serif;
       padding: 20px;
       background: #000;  /* dark background */
