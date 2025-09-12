@@ -4,24 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arihant DC Pandey</title>
+<link rel="stylesheet" href="darkmode.css"> <!-- Dark mode CSS loaded -->
 <style>
-/* Base CSS */
+/* Base Light Mode CSS */
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background: #111;
-  color: #fff;
+  background: #fff;
+  color: #000;
+  transition: all 0.3s ease;
 }
 .book {
   margin-bottom: 50px;
   padding: 20px;
-  background: #222;
+  background: #f3f3f3;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .book h2 {
   margin-top: 0;
-  color: #fff;
+  color: #000;
 }
 .btn {
   display: inline-block;
@@ -35,6 +37,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   border: none;
+  transition: all 0.3s ease;
 }
 .btn:hover {
   background: #00a87a;
@@ -48,7 +51,8 @@ iframe {
   height: 600px;
   border: 1px solid #333;
   border-radius: 8px;
-  background: #000;
+  background: #fff;
+  transition: all 0.3s ease;
 }
 .btn-group {
   display: flex;
@@ -58,10 +62,10 @@ iframe {
 }
 </style>
 </head>
-<body>
+<body data-theme="light">
 
 <!-- Dark Mode Toggle -->
-<button class="btn" id="darkModeToggle">🌓 Toggle AMOLED Neon Dark Mode</button>
+<button class="btn" id="darkModeToggle">🌓 Toggle Dark/Light Mode</button>
 
 <!-- Book Container -->
 <div id="books-container"></div>
@@ -120,21 +124,9 @@ books.forEach(book => {
 
 // --- Dark Mode Toggle --- //
 const darkModeToggle = document.getElementById('darkModeToggle');
-let darkModeOn = false;
-
 darkModeToggle.addEventListener('click', () => {
-  if(!darkModeOn) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'darkmode.css'; // Make sure darkmode.css is in same folder
-    link.id = 'darkModeStylesheet';
-    document.head.appendChild(link);
-    darkModeOn = true;
-  } else {
-    const link = document.getElementById('darkModeStylesheet');
-    if(link) link.remove();
-    darkModeOn = false;
-  }
+  const current = document.body.getAttribute('data-theme');
+  document.body.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
 });
 </script>
 
