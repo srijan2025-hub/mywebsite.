@@ -1,8 +1,8 @@
-/* Dark mode only when body[data-theme="dark"] */
+/* Dark mode applied only when body[data-theme="dark"] */
 body[data-theme="dark"] {
   background: #000 !important;
   color: #fff !important;
-  font-family: Arial, sans-serif;
+  transition: all 0.5s ease;
 }
 
 /* Book cards neon */
@@ -14,6 +14,7 @@ body[data-theme="dark"] .book {
   margin-bottom: 50px;
   box-shadow: 0 0 12px #00ffe0, 0 0 24px #00ffe0aa;
   animation: neonPulse 6s infinite alternate;
+  transition: all 0.5s ease;
 }
 
 body[data-theme="dark"] .book h2 {
