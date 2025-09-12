@@ -1,12 +1,12 @@
-/* Dark mode applied only when body[data-theme="dark"] */
-body[data-theme="dark"] {
+/* AMOLED Dark Mode with Neon Glow + Hover Neon Trail + Neon Iframes */
+body {
   background: #000 !important;
   color: #fff !important;
-  transition: all 0.5s ease;
+  font-family: Arial, sans-serif;
 }
 
 /* Book cards neon */
-body[data-theme="dark"] .book {
+.book {
   background: #000 !important;
   border: 2px solid #00ffe0;
   border-radius: 12px;
@@ -14,16 +14,15 @@ body[data-theme="dark"] .book {
   margin-bottom: 50px;
   box-shadow: 0 0 12px #00ffe0, 0 0 24px #00ffe0aa;
   animation: neonPulse 6s infinite alternate;
-  transition: all 0.5s ease;
 }
 
-body[data-theme="dark"] .book h2 {
+.book h2 {
   color: #00ffe0 !important;
   text-shadow: 0 0 8px #00ffe0aa, 0 0 16px #00ffe0aa;
 }
 
 /* Buttons neon glow + animated trail */
-body[data-theme="dark"] .btn {
+.btn {
   position: relative;
   display: inline-block;
   background: #000 !important;
@@ -40,8 +39,8 @@ body[data-theme="dark"] .btn {
   z-index: 1;
 }
 
-/* Neon trail effect on buttons */
-body[data-theme="dark"] .btn::before {
+/* Neon trail effect */
+.btn::before {
   content: '';
   position: absolute;
   top: -2px; left: -2px; right: -2px; bottom: -2px;
@@ -55,7 +54,7 @@ body[data-theme="dark"] .btn::before {
   animation: neonTrail 3s linear infinite;
 }
 
-body[data-theme="dark"] .btn:hover::before {
+.btn:hover::before {
   opacity: 1;
 }
 
@@ -67,7 +66,7 @@ body[data-theme="dark"] .btn:hover::before {
 }
 
 /* Neon iframe styling */
-body[data-theme="dark"] iframe {
+iframe {
   background: #000 !important;
   border: 2px solid #00ffe0 !important;
   border-radius: 8px;
@@ -75,7 +74,8 @@ body[data-theme="dark"] iframe {
   transition: all 0.3s ease;
 }
 
-body[data-theme="dark"] iframe:hover {
+/* Hover effect on iframe */
+iframe:hover {
   box-shadow: 0 0 24px #00ffe0, 0 0 48px #00ffe0aa;
 }
 
