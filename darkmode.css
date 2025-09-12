@@ -1,82 +1,69 @@
-/* AMOLED Dark Mode with Neon Glow + Hover Neon Trail + Neon Iframes */
-body {
-  background: #000 !important;
-  color: #fff !important;
-  font-family: Arial, sans-serif;
+/* Dark mode only when body[data-theme="dark"] */
+body[data-theme="dark"] {
+  background: #000;
+  color: #fff;
+  transition: all 0.5s ease;
 }
 
-/* Book cards neon */
-.book {
-  background: #000 !important;
+/* Book cards neon glow */
+body[data-theme="dark"] .book {
+  background: #000;
   border: 2px solid #00ffe0;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 50px;
   box-shadow: 0 0 12px #00ffe0, 0 0 24px #00ffe0aa;
   animation: neonPulse 6s infinite alternate;
+  transition: all 0.5s ease;
 }
 
-.book h2 {
-  color: #00ffe0 !important;
+body[data-theme="dark"] .book h2 {
+  color: #00ffe0;
   text-shadow: 0 0 8px #00ffe0aa, 0 0 16px #00ffe0aa;
 }
 
-/* Buttons neon glow + animated trail */
-.btn {
+/* Buttons neon glow with flowing gradient */
+body[data-theme="dark"] .btn {
   position: relative;
   display: inline-block;
-  background: #000 !important;
-  color: #00ffe0 !important;
+  padding: 10px 15px;
+  background: #000;
+  color: #00ffe0;
   border: 2px solid #00ffe0;
   border-radius: 6px;
-  padding: 10px 15px;
   font-weight: bold;
   cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 0 8px #00ffe0, 0 0 16px #00ffe0aa;
-  transition: all 0.3s ease;
   overflow: hidden;
   z-index: 1;
+  transition: color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Neon trail effect */
-.btn::before {
+/* Flowing gradient border using ::before */
+body[data-theme="dark"] .btn::before {
   content: '';
   position: absolute;
   top: -2px; left: -2px; right: -2px; bottom: -2px;
   border-radius: 6px;
   background: linear-gradient(90deg, #00ffe0, #00a8ff, #ff00ff, #ff0080, #00ffe0);
+  background-size: 300% 100%;
   z-index: -1;
-  filter: blur(10px);
+  filter: blur(8px);
   opacity: 0;
   transition: opacity 0.3s ease;
-  background-size: 400% 100%;
-  animation: neonTrail 3s linear infinite;
+  animation: neonBorderFlow 4s linear infinite;
 }
 
-.btn:hover::before {
+/* Show neon border on hover or tap */
+body[data-theme="dark"] .btn:hover::before,
+body[data-theme="dark"] .btn:active::before {
   opacity: 1;
 }
 
-/* Neon trail animation */
-@keyframes neonTrail {
+/* Neon trail animation along border */
+@keyframes neonBorderFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-/* Neon iframe styling */
-iframe {
-  background: #000 !important;
-  border: 2px solid #00ffe0 !important;
-  border-radius: 8px;
-  box-shadow: 0 0 12px #00ffe0, 0 0 24px #00ffe0aa;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect on iframe */
-iframe:hover {
-  box-shadow: 0 0 24px #00ffe0, 0 0 48px #00ffe0aa;
 }
 
 /* Neon pulse animation for book cards */
@@ -84,4 +71,17 @@ iframe:hover {
   0% { box-shadow: 0 0 8px #00ffe0, 0 0 16px #00ffe0aa; }
   50% { box-shadow: 0 0 16px #00a8ff, 0 0 32px #00a8ffaa; }
   100% { box-shadow: 0 0 8px #00ffe0, 0 0 16px #00ffe0aa; }
+}
+
+/* Neon iframe glow */
+body[data-theme="dark"] iframe {
+  background: #000;
+  border: 2px solid #00ffe0;
+  border-radius: 8px;
+  box-shadow: 0 0 12px #00ffe0, 0 0 24px #00ffe0aa;
+  transition: all 0.3s ease;
+}
+
+body[data-theme="dark"] iframe:hover {
+  box-shadow: 0 0 24px #00ffe0, 0 0 48px #00ffe0aa;
 }
