@@ -1,0 +1,82 @@
+/* AMOLED Dark Mode with Pulsing Gradient Neon + Neon Trail on Hover */
+body {
+  background: #000 !important;  /* AMOLED black */
+  color: #fff !important;
+  font-family: Arial, sans-serif;
+}
+
+/* Gradient animation for pulsing neon */
+@keyframes neonGradient {
+  0% { border-color: #00ffe0; box-shadow: 0 0 8px #00ffe0, 0 0 16px #00ffe0aa; }
+  25% { border-color: #00a8ff; box-shadow: 0 0 12px #00a8ff, 0 0 24px #00a8ffaa; }
+  50% { border-color: #ff00ff; box-shadow: 0 0 16px #ff00ff, 0 0 32px #ff00ffaa; }
+  75% { border-color: #ff0080; box-shadow: 0 0 12px #ff0080, 0 0 24px #ff0080aa; }
+  100% { border-color: #00ffe0; box-shadow: 0 0 8px #00ffe0, 0 0 16px #00ffe0aa; }
+}
+
+/* Book cards */
+.book {
+  position: relative;
+  background: #000 !important;
+  border: 2px solid #00ffe0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 50px;
+  animation: neonGradient 6s infinite alternate;
+}
+
+/* Book heading */
+.book h2 {
+  color: #00ffe0 !important;
+  text-shadow: 0 0 8px #00ffe0aa, 0 0 16px #00ffe0aa;
+}
+
+/* Neon buttons */
+.btn {
+  position: relative;
+  display: inline-block;
+  background: #000 !important;
+  color: #00ffe0 !important;
+  border: 2px solid #00ffe0;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 0 8px #00ffe0, 0 0 16px #00ffe0aa;
+  animation: neonGradient 6s infinite alternate;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Neon trail hover effect */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #00ffe0, #00a8ff, #ff00ff, #ff0080, #00ffe0);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: neonTrail 3s linear infinite;
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+/* Neon trail animation */
+@keyframes neonTrail {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+iframe {
+  background: #000 !important;
+  border: 2px solid #00ffe0 !important;
+  border-radius: 8px;
+}
