@@ -1,4 +1,4 @@
-/* ================= Dark Mode – Simple Neon Borders ================= */
+/* ================= Dark Mode – Neon Glow ================= */
 body[data-theme="dark"] {
   background: #000;
   color: #fff;
@@ -20,7 +20,7 @@ body[data-theme="dark"] .book h2 {
   text-shadow: 0 0 6px #00ffe0aa, 0 0 12px #00ffe0aa;
 }
 
-/* ---------- Buttons with simple neon borders ---------- */
+/* ---------- Buttons with neon borders ---------- */
 body[data-theme="dark"] .btn {
   position: relative;
   display: inline-block;
@@ -36,11 +36,37 @@ body[data-theme="dark"] .btn {
   transition: all 0.3s ease;
 }
 
-/* Simple neon glow on hover/tap */
+/* Hover glow */
 body[data-theme="dark"] .btn:hover,
 body[data-theme="dark"] .btn:active {
   box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0aa;
   color: #00ffe0;
+}
+
+/* ---------- Moving border glow animation ---------- */
+@keyframes movingGlow {
+  0% {
+    border-image-source: linear-gradient(0deg, var(--glow) 0%, transparent 100%);
+  }
+  25% {
+    border-image-source: linear-gradient(90deg, var(--glow) 0%, transparent 100%);
+  }
+  50% {
+    border-image-source: linear-gradient(180deg, var(--glow) 0%, transparent 100%);
+  }
+  75% {
+    border-image-source: linear-gradient(270deg, var(--glow) 0%, transparent 100%);
+  }
+  100% {
+    border-image-source: linear-gradient(360deg, var(--glow) 0%, transparent 100%);
+  }
+}
+
+/* Applied when button is tapped — moving glow around border */
+body[data-theme="dark"] .btn.flash {
+  border: 3px solid transparent;
+  border-image-slice: 1;
+  animation: movingGlow 1s linear;
 }
 
 /* ---------- Iframe neon glow ---------- */
