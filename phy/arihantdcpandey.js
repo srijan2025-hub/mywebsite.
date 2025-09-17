@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "DC Pandey Mechanics 2",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
       id: "preview2",
-      showDrive: false
+      showDrive: true
     }
   ];
 
