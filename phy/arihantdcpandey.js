@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const container = document.getElementById("books-container");
+
   books.forEach(book => {
-    // If showDrive is true, add a "View in GDrive" button
     const gdriveBtn = book.showDrive && book.gdrive 
       ? `<a class="btn" href="https://drive.google.com/file/d/${book.gdrive}/view" target="_blank">📂 View in GDrive</a>` 
       : "";
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   });
 
-  // Preview & Fullscreen
+  // Preview function
   window.togglePreview = function(id, pdfUrl, gdriveId, showDrive) {
     const preview = document.getElementById(id);
     if (preview.style.display !== "block") {
@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Fullscreen function (PDF.js)
   window.openFullscreenPDF = function(pdfUrl) {
     const viewerUrl = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
     window.open(viewerUrl, '_blank');
