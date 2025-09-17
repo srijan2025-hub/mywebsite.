@@ -6,6 +6,7 @@ body {
   color: #000;
   transition: all 0.5s ease;
 }
+
 .book {
   margin-bottom: 50px;
   padding: 20px;
@@ -14,14 +15,15 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: all 0.5s ease;
 }
+
 .book h2 { margin-top: 0; color: #000; }
+
 .btn {
   display: inline-block;
   margin: 6px 6px 15px 0;
   padding: 10px 15px;
   background: #00c896;
   color: #000;
-  text-decoration: none;
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
@@ -29,8 +31,11 @@ body {
   border: none;
   transition: all 0.3s ease;
 }
+
 .btn:hover { background: #00a87a; }
+
 .preview { display: none; margin-top: 15px; }
+
 iframe {
   width: 100%;
   height: 600px;
@@ -39,56 +44,77 @@ iframe {
   background: #fff;
   transition: all 0.5s ease;
 }
+
 .btn-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
 
-/* ================= Dark Mode – Neon Glow ================= */
+/* ================= Dark Mode ================= */
 body[data-theme="dark"] {
   background: #000;
   color: #fff;
 }
+
 body[data-theme="dark"] .book {
   background: #111;
   box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0aa;
 }
+
 body[data-theme="dark"] .book h2 {
   color: #00ffe0;
   text-shadow: 0 0 6px #00ffe0aa, 0 0 12px #00ffe0aa;
 }
+
 body[data-theme="dark"] .btn {
   background: #000;
   color: #00ffe0;
   border: 2px solid #00ffe0;
 }
+
 body[data-theme="dark"] .btn:hover,
 body[data-theme="dark"] .btn:active {
   box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0aa;
 }
 
-/* ================= Light Mode – Neon Glow ================= */
+body[data-theme="dark"] iframe {
+  background: #000;
+  border: 2px solid #00ffe0;
+  box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0aa;
+}
+
+/* ================= Light Mode ================= */
 body[data-theme="light"] {
   background: #fff;
   color: #000;
 }
+
 body[data-theme="light"] .book {
   background: #f9f9f9;
   border: 2px solid #000;
   box-shadow: 0 0 10px #0002;
 }
+
 body[data-theme="light"] .book h2 {
   color: #000;
   text-shadow: 0 0 4px #0003;
 }
+
 body[data-theme="light"] .btn {
   background: #fff;
   color: #000;
   border: 2px solid #000;
 }
+
 body[data-theme="light"] .btn:hover,
 body[data-theme="light"] .btn:active {
   box-shadow: 0 0 10px #000, 0 0 20px #000;
 }
 
-/* ---------- Dark Mode Glow Animation ---------- */
+body[data-theme="light"] iframe {
+  background: #fff;
+  border: 2px solid #000;
+  box-shadow: 0 0 8px #0003;
+}
+
+/* ---------- Glow Animations ---------- */
 @keyframes movingGlow {
   0% { border-image-source: linear-gradient(0deg, var(--glow) 0%, transparent 100%); }
   25% { border-image-source: linear-gradient(90deg, var(--glow) 0%, transparent 100%); }
@@ -96,32 +122,21 @@ body[data-theme="light"] .btn:active {
   75% { border-image-source: linear-gradient(270deg, var(--glow) 0%, transparent 100%); }
   100% { border-image-source: linear-gradient(360deg, var(--glow) 0%, transparent 100%); }
 }
+
 body[data-theme="dark"] .btn.flash {
   border: 3px solid transparent;
   border-image-slice: 1;
   animation: movingGlow 1s linear;
 }
 
-/* ---------- Light Mode Pulse Glow ---------- */
 @keyframes pulseGlow {
   0%   { box-shadow: 0 0 5px var(--glow), 0 0 10px var(--glow); }
   50%  { box-shadow: 0 0 15px var(--glow), 0 0 30px var(--glow); }
   100% { box-shadow: 0 0 5px var(--glow), 0 0 10px var(--glow); }
 }
+
 body[data-theme="light"] .btn.flash {
   border: 2px solid #000;
   box-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow), 0 0 40px var(--glow);
   animation: pulseGlow 1s ease-out;
-}
-
-/* ---------- Iframe Glow ---------- */
-body[data-theme="dark"] iframe {
-  background: #000;
-  border: 2px solid #00ffe0;
-  box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0aa;
-}
-body[data-theme="light"] iframe {
-  background: #fff;
-  border: 2px solid #000;
-  box-shadow: 0 0 8px #0003;
 }
