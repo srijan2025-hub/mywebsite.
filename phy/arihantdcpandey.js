@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics1.pdf",
       gdrive: "1Ft7LyjA3FLoRYhTCDHWPEu_aYbhWaeau", // optional
       id: "preview1"
+      showDrive: true
     },
     {
       title: "DC Pandey Mechanics 2",
