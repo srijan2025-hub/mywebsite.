@@ -50,7 +50,7 @@ function startContinuousGlow() {
     const glowColor = `rgb(${r}, ${g}, ${b})`;
     // Update CSS variable --glow for all glowing elements
     document.documentElement.style.setProperty('--glow', glowColor);
-  }, 500); // change color every 0.5 seconds
+  }, 1000); // change color every 0.5 seconds
 }
 
 // Start continuous glow on page load
