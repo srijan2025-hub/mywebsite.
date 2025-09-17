@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics1.pdf",
       gdrive: "https://drive.google.com/file/d/1Ft7LyjA3FLoRYhTCDHWPEu_aYbhWaeau/preview",
       id: "preview1",
-      showGDrive: false
+      showGDrive: false // remove Google Drive button for this book
     },
     {
       title: "DC Pandey Mechanics 2",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
       gdrive: "https://drive.google.com/file/d/1Fv-w6t8fdsWGFcBcWjEK_bYjsm7fVMbm/preview",
       id: "preview2",
-      showGDrive: true
+      showGDrive: true // keep Google Drive button for this book
     }
   ];
 
