@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: "DC Pandey Mechanics 1",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics1.pdf",
+      gdrive: "https://drive.google.com/file/d/1Ft7LyjA3FLoRYhTCDHWPEu_aYbhWaeau/preview",
       id: "preview1",
-      showDrive: false
+      showDrive:true
     },
     {
       title: "DC Pandey Mechanics 2",
