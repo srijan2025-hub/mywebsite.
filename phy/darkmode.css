@@ -2,12 +2,11 @@
 
 /* ===== Variables ===== */
 :root {
-  /* Global Colors */
   --bg-color-light: #fff;
   --bg-color-dark: #000;
 
-  --text-color-light: #000; /* letters stay unchanged */
-  --text-color-dark: #fff;  /* letters stay unchanged */
+  --text-color-light: #000;
+  --text-color-dark: #fff;
 
   --book-bg-light: #f9f9f9;
   --book-bg-dark: #111;
@@ -18,11 +17,10 @@
   --button-bg-light: #fff;
   --button-bg-dark: #000;
 
-  --button-text-light: #000; /* letters stay unchanged */
-  --button-text-dark: #00ffe0; /* letters stay unchanged */
+  --button-text-light: #000;
+  --button-text-dark: #00ffe0;
 
-  --glow: rgb(0, 255, 224); /* initial glow color, can be updated via JS */
-
+  --glow: rgb(0, 255, 224); /* initial glow color, updated via JS */
   --font-family: 'Arial', sans-serif;
 }
 
@@ -33,6 +31,7 @@ body {
   background: var(--bg-color-light);
   color: var(--text-color-light);
   transition: all 0.5s ease;
+  text-shadow: none; /* ensures text never glows */
 }
 
 .book {
@@ -40,14 +39,15 @@ body {
   padding: 20px;
   background: var(--book-bg-light);
   border-radius: 12px;
-  border: 2px solid var(--border-color-light);
-  box-shadow: 0 0 10px var(--glow); /* continuous glow */
+  border: 2px solid var(--glow);
+  box-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow);
   transition: all 0.5s ease;
 }
 
 .book h2 {
   margin-top: 0;
-  color: var(--text-color-light); /* letters unchanged */
+  color: var(--text-color-light);
+  text-shadow: none; /* no glow on text */
 }
 
 .btn {
@@ -55,15 +55,16 @@ body {
   margin: 6px 6px 15px 0;
   padding: 10px 15px;
   background: var(--button-bg-light);
-  color: var(--button-text-light); /* letters unchanged */
+  color: var(--button-text-light);
   text-decoration: none;
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
   font-weight: bold;
-  border: 2px solid var(--glow); /* glowing border */
+  border: 2px solid var(--glow);
   box-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow);
   transition: all 0.3s ease;
+  text-shadow: none;
 }
 
 .btn:hover { 
@@ -78,7 +79,7 @@ body {
 iframe {
   width: 100%;
   height: 600px;
-  border: 2px solid var(--glow); /* glowing border */
+  border: 2px solid var(--glow);
   border-radius: 8px;
   background: var(--bg-color-light);
   box-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow);
@@ -105,14 +106,16 @@ body[data-theme="dark"] .book {
 }
 
 body[data-theme="dark"] .book h2 {
-  color: var(--text-color-dark); /* letters unchanged */
+  color: var(--text-color-dark);
+  text-shadow: none;
 }
 
 body[data-theme="dark"] .btn {
   background: var(--button-bg-dark);
-  color: var(--button-text-dark); /* letters unchanged */
+  color: var(--button-text-dark);
   border: 2px solid var(--glow);
   box-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow);
+  text-shadow: none;
 }
 
 body[data-theme="dark"] .btn:hover {
@@ -138,14 +141,16 @@ body[data-theme="light"] .book {
 }
 
 body[data-theme="light"] .book h2 {
-  color: var(--text-color-light); /* letters unchanged */
+  color: var(--text-color-light);
+  text-shadow: none;
 }
 
 body[data-theme="light"] .btn {
   background: var(--button-bg-light);
-  color: var(--button-text-light); /* letters unchanged */
+  color: var(--button-text-light);
   border: 2px solid var(--glow);
   box-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow);
+  text-shadow: none;
 }
 
 body[data-theme="light"] .btn:hover {
