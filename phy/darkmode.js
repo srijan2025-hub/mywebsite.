@@ -18,7 +18,7 @@ function getRandomRGB() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
-  return `rgb(${r},${g},${b})`;
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 // Apply glow effect on button click
@@ -30,7 +30,7 @@ function triggerGlow(btn) {
   setTimeout(() => {
     btn.classList.remove('flash');
     btn.style.removeProperty('--glow');
-  }, 3000); // extended to 3 seconds
+  }, 1200); // duration of glow
 }
 
 // Listen for button clicks
