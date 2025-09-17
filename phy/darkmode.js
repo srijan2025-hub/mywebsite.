@@ -1,3 +1,5 @@
+// ===== darkmode.js =====
+
 // Dark/Light Mode Toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 let savedTheme = localStorage.getItem('theme') || 'dark';
@@ -30,7 +32,7 @@ function triggerGlow(btn) {
   setTimeout(() => {
     btn.classList.remove('flash');
     btn.style.removeProperty('--glow');
-  }, 1200); // duration of glow
+  }, 1200); // duration of click glow
 }
 
 // Listen for button clicks
@@ -38,3 +40,18 @@ document.body.addEventListener('click', (e) => {
   const btn = e.target.closest('.btn');
   if (btn) triggerGlow(btn);
 });
+
+// ===== Continuous RGB Glow =====
+function startContinuousGlow() {
+  setInterval(() => {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const glowColor = `rgb(${r}, ${g}, ${b})`;
+    // Update CSS variable --glow for all glowing elements
+    document.documentElement.style.setProperty('--glow', glowColor);
+  }, 300); // change color every 0.3 seconds
+}
+
+// Start continuous glow on page load
+document.addEventListener('DOMContentLoaded', startContinuousGlow);
