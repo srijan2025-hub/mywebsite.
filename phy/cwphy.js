@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const books = [
     {
-      title: "DC Pandey Mechanics 1",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics1.pdf",
+      title: "Wave Optics Sheet 1 CW",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/waveopticssheet1cw.pdf",
       gdrive: "", // optional
       id: "preview1"
     },
