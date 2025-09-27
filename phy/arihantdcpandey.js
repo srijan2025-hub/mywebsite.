@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeywavesandthermodynamics.pdf",
       gdrive: "", // optional
       id: "preview4"
+    },
+    {
+      title: "DC Pandey Optics & Modern Physics",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyopticsandmodernphysics.pdf",
+      gdrive: "", // optional
+      id: "preview4"
     }
   ];
 
