@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "DC Pandey electricity",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyelectricityandmagnetism.pdf",
       gdrive: "", // empty if no Drive ID
-      id: "preview2"
+      id: "preview3"
     }
   ];
 
