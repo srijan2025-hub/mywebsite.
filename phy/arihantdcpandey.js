@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
       gdrive: "", // empty if no Drive ID
       id: "preview2"
+    },
+    {
+      title: "DC Pandey electricity",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyelectricityandmagnetism.pdf",
+      gdrive: "", // empty if no Drive ID
+      id: "preview2"
     }
   ];
 
