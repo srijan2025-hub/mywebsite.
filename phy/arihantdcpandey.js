@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "DC Pandey Optics & Modern Physics",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyopticsandmodernphysics.pdf",
       gdrive: "", // optional
-      id: "preview4"
+      id: "preview5"
     }
   ];
 
