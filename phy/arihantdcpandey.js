@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyelectricityandmagnetism.pdf",
       gdrive: "", // empty if no Drive ID
       id: "preview3"
+    },
+    {
+      title: "DC Pandey Waves & Thermodynamics",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeywavesandthermodynamics.pdf",
+      gdrive: "", // optional
+      id: "preview4"
     }
   ];
 
