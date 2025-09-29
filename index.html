@@ -82,7 +82,7 @@
 
   <!-- Form shown first -->
   <div id="form-container">
-    <h2>Welcome! Please enter your details</h2>
+    <h2>Welcome! Please enter your details Made By ChatGPT</h2>
     <form id="visitorForm" target="hidden_iframe" method="POST"
       action="https://docs.google.com/forms/d/e/1FAIpQLScm1rsCIWKFT5-UkF9h9dmgPn2pOKyYX73w-gjAwPHOmsjxeg/formResponse"
       onsubmit="return submitForm(event)">
@@ -152,8 +152,7 @@
       // Show greeting
       const greeting = document.getElementById('greeting');
       if (email) {
-        greeting.textContent = `Hello, ${name}! Welcome here.This site is totally made by ChatGpt(AI)👋`;
-      } else {
+        
         greeting.textContent = `Hello, ${name}! Welcome — you skipped email, that's totally fine 👋`;
       } else {
 
