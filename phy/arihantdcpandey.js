@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     container.innerHTML += `
       <div class="book">
-        <h2>📘 ${book.title}</h2>
+        <h2> ${book.title}</h2>
         <div class="btn-group">
           <a class="btn" href="${gdriveUrl}" target="_blank">📂 View in GDrive</a>
           <a class="btn" href="${book.pdf}" target="_blank">📂 View in Adobe</a>
