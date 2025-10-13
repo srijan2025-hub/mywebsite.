@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
       gdrive: "", // optional
       id: "preview1"
     },
+    {
+      title: "Wave Optics Sheet 1 CW",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/waveopticssheet2cw.pdf",
+      gdrive: "", // optional
+      id: "preview2"
+    }
   ];
 
   const container = document.getElementById("books-container");
