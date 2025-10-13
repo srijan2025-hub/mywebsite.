@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "preview1"
     },
     {
-      title: "Wave Optics Sheet 1 CW",
+      title: "Wave Optics Sheet 2CW",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/waveopticssheet2cw.pdf",
       gdrive: "", // optional
       id: "preview2"
