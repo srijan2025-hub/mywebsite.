@@ -2,34 +2,28 @@
 document.addEventListener('DOMContentLoaded', () => {
   const books = [
     {
-      title: "DC Pandey Mechanics 1",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics1.pdf",
+      title: "Physical World- Unit & Measurement (JEEm)",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqphysicalworldunit&measurement.pdf",
       gdrive: "", // optional
       id: "preview1"
     },
     {
-      title: "DC Pandey Mechanics 2",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
+      title: "Physical World- Unit & Measurement (NEET)",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/xxxxyyyyzzz.pdf",
       gdrive: "", // empty if no Drive ID
       id: "preview2"
     },
     {
-      title: "DC Pandey electricity",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyelectricityandmagnetism.pdf",
+      title: "Dimensioal Motion (JEEm)",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqdimentionalmotion.pdf",
       gdrive: "", // empty if no Drive ID
       id: "preview3"
     },
     {
-      title: "DC Pandey Waves & Thermodynamics",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeywavesandthermodynamics.pdf",
+      title: "Laws of Motion (JEEm)",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqlawsofmotion.pdf",
       gdrive: "", // optional
       id: "preview4"
-    },
-    {
-      title: "DC Pandey Optics & Modern Physics",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyopticsandmodernphysics.pdf",
-      gdrive: "", // optional
-      id: "preview5"
     }
   ];
 
