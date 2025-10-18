@@ -7,10 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "preview1"
     },
     {
-      title: "Wave Optics Sheet 2CW",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/waveopticssheet2cw.pdf",
+      title: "DC Pandey Mechanics 2",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
       gdrive: "", // optional
       id: "preview2"
+    },
+    {
+      title: "DC Pandey Mechanics 2",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
+      gdrive: "", // optional
+      id: "preview3"
+    },{
+      title: "DC Pandey Mechanics 2",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
+      gdrive: "", // optional
+      id: "preview4"
+    },{
+      title: "DC Pandey Mechanics 2",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
+      gdrive: "", // optional
+      id: "preview5"
     }
   ];
 
