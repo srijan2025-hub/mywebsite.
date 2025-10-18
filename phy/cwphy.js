@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/waveopticssheet2cw.pdf",
       gdrive: "", // optional
       id: "preview2"
+    },
+    {
+      title: "Geometrical Optics Sheet 1CW",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/sheet1cwgeometricaloptics.pdf",
+      gdrive: "", // optional
+      id: "preview2"
     }
   ];
 
