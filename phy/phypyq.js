@@ -1,29 +1,16 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const books = [
     {
-      title: "Physical World- Unit & Measurement (JEEm)",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqphysicalworldunit&measurement.pdf",
+      title: "Wave Optics Sheet 1 CW",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/waveopticssheet1cw.pdf",
       gdrive: "", // optional
       id: "preview1"
     },
     {
-      title: "Physical World- Unit & Measurement (NEET)",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/xxxxyyyyzzz.pdf",
-      gdrive: "", // empty if no Drive ID
-      id: "preview2"
-    },
-    {
-      title: "Dimensioal Motion (JEEm)",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqdimentionalmotion.pdf",
-      gdrive: "", // empty if no Drive ID
-      id: "preview3"
-    },
-    {
-      title: "Laws of Motion (JEEm)",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqlawsofmotion.pdf",
+      title: "Wave Optics Sheet 2CW",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/waveopticssheet2cw.pdf",
       gdrive: "", // optional
-      id: "preview4"
+      id: "preview2"
     }
   ];
 
@@ -37,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     container.innerHTML += `
       <div class="book">
-        <h2> ${book.title}</h2>
+        <h2>📘 ${book.title}</h2>
         <div class="btn-group">
           <a class="btn" href="${gdriveUrl}" target="_blank">📂 View in GDrive</a>
           <a class="btn" href="${book.pdf}" target="_blank">📂 View in Adobe</a>
