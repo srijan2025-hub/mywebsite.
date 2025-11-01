@@ -1,22 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
   const books = [
     {
-      title: "Wave Optics Sheet 1 CW",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/cwsheet1waveoptics.pdf",
+      title: "DC Pandey Mechanics 1",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics1.pdf",
       gdrive: "", // optional
       id: "preview1"
     },
     {
-      title: "Wave Optics Sheet 2CW",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/cwsheet2waveoptics.pdf",
+      title: "DC Pandey Mechanics 2",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
       gdrive: "", // optional
       id: "preview2"
     },
     {
-      title: "Geometrical Optics Sheet 1CW",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/cwsheet1geometricaloptics.pdf",
+      title: "Waves & Thermodynamics",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeywavesandthermodynamics.pdf",
       gdrive: "", // optional
       id: "preview3"
+    },{
+      title: "Electricity & Magnetism",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyelectricityandmagnetism.pdf",
+      gdrive: "", // optional
+      id: "preview4"
+    },{
+      title: "Optics & Modern Physics",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyopticsandmodernphysics.pdf",
+      gdrive: "", // optional
+      id: "preview5"
     }
   ];
 
