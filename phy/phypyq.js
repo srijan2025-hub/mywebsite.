@@ -1,16 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   const books = [
     {
-      title: "Wave Optics Sheet 1 CW",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/waveopticssheet1cw.pdf",
+      title: "pyq 1",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqdimensionalmotion.pdf",
       gdrive: "", // optional
       id: "preview1"
     },
     {
-      title: "Wave Optics Sheet 2CW",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/waveopticssheet2cw.pdf",
+      title: "pyq 2",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqlawsofmotion.pdf",
       gdrive: "", // optional
       id: "preview2"
+    },
+    {
+      title: "pyq 3",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqphysicalworldunit&measurement.pdf",
+      gdrive: "", // optional
+      id: "preview3"
     }
   ];
 
