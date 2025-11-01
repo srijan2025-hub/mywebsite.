@@ -1,24 +1,171 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Phy. PYQ NEET & JEE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phy. PYQ NEET & JEE Library</title>
+    <!-- Load Tailwind CSS for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Set font and transition for smooth dark mode switching */
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s;
+        }
 
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="darkmode.css">
+        /* Iframe styling for the embedded preview */
+        .preview-content {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: white; /* Ensure white background inside iframe area */
+        }
+    </style>
 </head>
-<body data-theme="dark">
+<body class="p-4 sm:p-8 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
 
-  <!-- Dark Mode Toggle -->
-  <button class="btn" id="darkModeToggle">🌓 Toggle Dark/Light Mode</button>
+    <header class="text-center mb-8">
+        <h1 class="text-4xl font-extrabold text-indigo-700 dark:text-indigo-400 mb-2">
+            Physics PYQ Library
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400">
+            Past Year Questions for NEET & JEE
+        </p>
+    </header>
 
-  <!-- Book Container -->
-  <div id="books-container"></div>
+    <!-- Dark Mode Toggle -->
+    <div class="max-w-6xl mx-auto mb-6 flex justify-end">
+        <button id="darkModeToggle" class="text-sm font-semibold py-2 px-4 rounded-lg transition-colors duration-300 bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 shadow-md">
+            🌓 Toggle Dark/Light Mode
+        </button>
+    </div>
 
-  <!-- External JS -->
-  <script src="phypyq.js"></script>
-  <script src="darkmode.js"></script>
+    <!-- Book Container -->
+    <div id="books-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- PDF cards will be inserted here -->
+    </div>
+
+    <script>
+        // --- 1. DARK MODE FUNCTIONALITY (Equivalent to darkmode.js) ---
+        const htmlElement = document.documentElement;
+        const toggleButton = document.getElementById('darkModeToggle');
+
+        // Load theme from localStorage or default to system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        }
+
+        // Toggle handler
+        toggleButton.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+
+        // --- 2. PDF LIBRARY LOGIC (Equivalent to phypyq.js) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const books = [
+                {
+                    title: "JEE PYQ: Dimensional Motion",
+                    pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqdimensionalmotion.pdf",
+                    gdrive: "", // optional
+                    id: "preview1"
+                },
+                {
+                    title: "JEE PYQ: Laws of Motion",
+                    pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqlawsofmotion.pdf",
+                    gdrive: "", // optional
+                    id: "preview2"
+                },
+                {
+                    title: "JEE PYQ: Physical World, Unit & Measurement",
+                    pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/jeepyqphysicalworldunit&measurement.pdf",
+                    gdrive: "", // optional
+                    id: "preview3"
+                }
+            ];
+
+            const container = document.getElementById("books-container");
+
+            books.forEach(book => {
+                // The safest way to embed an external raw link is via the Google Docs Viewer service.
+                const gdriveViewUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(book.pdf)}`;
+                
+                const bookCardHTML = `
+                    <div class="book p-6 rounded-xl shadow-lg transition-colors duration-300 bg-white dark:bg-gray-800 hover:shadow-xl">
+                        <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+                            📘 ${book.title}
+                        </h2>
+                        
+                        <div class="btn-group flex flex-wrap gap-3 mb-4">
+                            <!-- Button 1: GDrive/Docs Viewer -->
+                            <a class="flex-1 py-2 px-3 text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition text-center" href="${gdriveViewUrl}" target="_blank">
+                                📂 GDrive/Docs
+                            </a>
+                            <!-- Button 2: Open PDF in Browser -->
+                            <a class="flex-1 py-2 px-3 text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition text-center" href="${book.pdf}" target="_blank">
+                                📄 Open in Browser
+                            </a>
+                            <!-- Button 3: Show/Hide Inline Preview (Uses raw PDF link directly in iframe) -->
+                            <button class="flex-1 py-2 px-3 text-sm font-medium rounded-lg text-white bg-teal-600 hover:bg-teal-700 transition" onclick="togglePreview('${book.id}', '${book.pdf}')">
+                                🌐 Show/Hide Preview
+                            </button>
+                            <!-- Button 4: Download -->
+                            <a class="flex-1 py-2 px-3 text-sm font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 transition text-center" href="${book.pdf}" download="${book.title.replace(/\s/g, '_')}.pdf">
+                                ⬇️ Download
+                            </a>
+                            <!-- Button 5: Fullscreen PDF.js Viewer -->
+                            <button class="flex-1 py-2 px-3 text-sm font-medium rounded-lg text-white bg-purple-600 hover:bg-purple-700 transition" onclick="openFullscreenPDF('${book.pdf}')">
+                                🖥️ Fullscreen
+                            </button>
+                        </div>
+
+                        <!-- Preview Container: Display is set to height 0 initially -->
+                        <div id="${book.id}" class="h-0 opacity-0 transition-all duration-300 ease-in-out"></div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', bookCardHTML);
+            });
+
+            // Global function to toggle the embedded iframe preview
+            window.togglePreview = function(id, pdfUrl) {
+                const previewDiv = document.getElementById(id);
+                
+                if (previewDiv.offsetHeight === 0) {
+                    // Show preview by using the raw PDF link as the iframe source
+                    previewDiv.innerHTML = `<iframe class="preview-content" src="${pdfUrl}" allowfullscreen></iframe>`;
+                    previewDiv.style.height = '500px';
+                    previewDiv.style.opacity = '1';
+                    previewDiv.style.marginTop = '1rem';
+                    previewDiv.classList.add('rounded-lg', 'shadow-inner', 'border', 'border-gray-200', 'dark:border-gray-700');
+                } else {
+                    // Hide preview
+                    previewDiv.style.height = '0';
+                    previewDiv.style.opacity = '0';
+                    previewDiv.style.marginTop = '0';
+                    
+                    // Clear the content after transition to stop loading
+                    setTimeout(() => {
+                        previewDiv.innerHTML = "";
+                        previewDiv.classList.remove('rounded-lg', 'shadow-inner', 'border', 'border-gray-200', 'dark:border-gray-700');
+                    }, 300);
+                }
+            };
+
+            // Global function to open the PDF.js viewer in a new tab
+            window.openFullscreenPDF = function(pdfUrl) {
+                // Uses the Mozilla PDF.js viewer for a feature-rich experience
+                const viewerUrl = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+                window.open(viewerUrl, '_blank');
+            };
+        });
+    </script>
 </body>
 </html>
+
