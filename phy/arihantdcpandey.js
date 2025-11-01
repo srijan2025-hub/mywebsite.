@@ -13,18 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "preview2"
     },
     {
-      title: "DC Pandey Mechanics 2",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
+      title: "Waves & Thermodynamics",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeywavesandthermodynamics.pdf",
       gdrive: "", // optional
       id: "preview3"
     },{
-      title: "DC Pandey Mechanics 2",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
+      title: "Electricity & Magnetism",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyelectricityandmagnetism.pdf",
       gdrive: "", // optional
       id: "preview4"
     },{
-      title: "DC Pandey Mechanics 2",
-      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
+      title: "Optics & Modern Physics",
+      pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyopticsandmodernphysics.pdf",
       gdrive: "", // optional
       id: "preview5"
     }
