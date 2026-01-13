@@ -3,21 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arihant DC Pandey</title>
+  <title>Arihant DC Pandey | Physics Index</title>
 
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="darkmode.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Button Group Layout */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    /* Button Styling */
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 5px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    .btn:hover {
+      background: white;
+      color: black;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Page specific adjustments */
+    h2 { margin-top: 0; font-size: 1.2em; }
+  </style>
 </head>
-<body data-theme="dark">
+<body>
 
-  <!-- Dark Mode Toggle -->
-  <button class="btn" id="darkModeToggle">🌓 Toggle Dark/Light Mode</button>
+  <header>
+    <h1>📖 Arihant DC Pandey</h1>
+  </header>
 
-  <!-- Book Container -->
-  <div id="books-container"></div>
+  <div id="books-container" class="container"></div>
 
-  <!-- External JS -->
+  <a href="index.html" class="back-home">⬅ Back to Home</a>
+
+  <footer>
+    ✍️ Made by anonymous | Hosted Free on GitHub Pages
+  </footer>
+
   <script src="arihantdcpandey.js"></script>
-  <script src="darkmode.js"></script>
 </body>
 </html>
