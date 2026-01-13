@@ -3,29 +3,31 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: "DC Pandey Mechanics 1",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics1.pdf",
-      gdrive: "", // optional
+      gdrive: "", 
       id: "preview1"
     },
     {
       title: "DC Pandey Mechanics 2",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyMechanics2.pdf",
-      gdrive: "", // optional
+      gdrive: "", 
       id: "preview2"
     },
     {
       title: "Waves & Thermodynamics",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeywavesandthermodynamics.pdf",
-      gdrive: "", // optional
+      gdrive: "", 
       id: "preview3"
-    },{
+    },
+    {
       title: "Electricity & Magnetism",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyelectricityandmagnetism.pdf",
-      gdrive: "", // optional
+      gdrive: "", 
       id: "preview4"
-    },{
+    },
+    {
       title: "Optics & Modern Physics",
       pdf: "https://raw.githubusercontent.com/srijan2025-hub/physicsstorage1/main/DCPandeyopticsandmodernphysics.pdf",
-      gdrive: "", // optional
+      gdrive: "", 
       id: "preview5"
     }
   ];
@@ -43,35 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2>📘 ${book.title}</h2>
         <div class="btn-group">
           <a class="btn" href="${gdriveUrl}" target="_blank">📂 View in GDrive</a>
-          <a class="btn" href="${book.pdf}" target="_blank">📂 View in Adobe</a>
-          <button class="btn" onclick="togglePreview('${book.id}','${book.pdf}','${book.gdrive}')">🌐 Show/Hide Preview</button>
           <a class="btn" href="${book.pdf}" download>⬇️ Download</a>
           <button class="btn" onclick="openFullscreenPDF('${book.pdf}')">🖥️ Fullscreen</button>
         </div>
-        <div class="preview" id="${book.id}"></div>
       </div>
     `;
   });
-
-  // Preview function
-  window.togglePreview = function(id, pdfUrl, gdriveId) {
-    const preview = document.getElementById(id);
-    if (preview.style.display !== "block") {
-      if (gdriveId) {
-        preview.innerHTML = `
-          <iframe src="https://drive.google.com/file/d/${gdriveId}/preview" 
-                  allowfullscreen 
-                  onerror="this.onerror=null;this.src='https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true'">
-          </iframe>`;
-      } else {
-        preview.innerHTML = `<iframe src="https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true" allowfullscreen></iframe>`;
-      }
-      preview.style.display = "block";
-    } else {
-      preview.style.display = "none";
-      preview.innerHTML = "";
-    }
-  };
 
   // Fullscreen PDF.js
   window.openFullscreenPDF = function(pdfUrl) {
